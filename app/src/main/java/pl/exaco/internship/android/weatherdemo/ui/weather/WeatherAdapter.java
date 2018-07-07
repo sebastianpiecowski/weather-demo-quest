@@ -4,6 +4,7 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,12 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 		public WeatherViewHolder(View itemView) {
 			super(itemView);
 			binding = DataBindingUtil.bind(itemView);
+
+			itemView.setOnClickListener((View v) ->{
+				CityWeather selectedCity=items.get(getAdapterPosition());
+
+				Log.i("id_clicked", String.valueOf(selectedCity.getId()));
+			});
 		}
 
 		void binData(CityWeather data) {
