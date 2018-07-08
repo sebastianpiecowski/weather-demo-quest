@@ -9,6 +9,7 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.BindingObject;
 import org.androidannotations.annotations.DataBound;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 
 import java.util.List;
 
@@ -28,6 +29,9 @@ public class ForecastActivity extends AppCompatActivity implements ForecastContr
     @BindingObject
     ActivityForecastBinding binding;
 
+    @Extra ("id")
+    int id;
+
     private ForecastAdapter adapter;
     private ForecastContract.Presenter presenter;
 
@@ -38,7 +42,7 @@ public class ForecastActivity extends AppCompatActivity implements ForecastContr
         adapter = new ForecastAdapter(this);
         binding.recyclerView.setAdapter(adapter);
         presenter = new ForecastPresenter(this, serviceFactory);
-        getData(0);
+        getData(id);
 
     }
 

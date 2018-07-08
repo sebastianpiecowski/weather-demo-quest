@@ -10,7 +10,7 @@ data class CityWeather(
         @SerializedName("visibility") val visibility: Int = 0,
         @SerializedName("wind") val wind: Wind? = null,
         @SerializedName("clouds") val clouds: Clouds? = null,
-        @SerializedName("dt") val dt: Int = 0,
+        @SerializedName("dt") val dt: Long = 0,
         @SerializedName("id") val id: Int = 0,
         @SerializedName("name") val name: String? = null
 )

@@ -13,6 +13,7 @@ import java.util.List;
 
 import pl.exaco.internship.android.weatherdemo.R;
 import pl.exaco.internship.android.weatherdemo.databinding.ItemForecastBinding;
+import pl.exaco.internship.android.weatherdemo.databinding.ItemForecastBindingImpl;
 import pl.exaco.internship.android.weatherdemo.model.CityWeather;
 
 public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder> {
@@ -39,6 +40,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     public ForecastViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
         final View itemView = LayoutInflater.from(context).inflate(R.layout.item_forecast, parent, false);
         return new ForecastViewHolder(itemView);
+        //ForecastAdapter.ForecastViewHolder(itemView);
     }
     @Override
     public void onBindViewHolder(ForecastAdapter.ForecastViewHolder holder, int position) {
@@ -49,18 +51,18 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     }
     public class ForecastViewHolder extends RecyclerView.ViewHolder{
 
-       // ItemForecastBinding binding;
+        ItemForecastBindingImpl binding;
 
         public  ForecastViewHolder(View itemView){
             super(itemView);
 
-           // binding= DataBindingUtil.bind(itemView);
+            binding= DataBindingUtil.bind(itemView);
 
         }
 
         void binData(CityWeather data) {
-         //   binding.setCityWeather(data);
-          //  binding.setDescription(data.getCityWeather().get(0));
+            binding.setCityWeather(data);
+            binding.setDescription(data.getCityWeather().get(0));
         }
     }
 }

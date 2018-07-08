@@ -23,7 +23,7 @@ public class CustomDataBinding {
 
     @BindingAdapter(value = "dateTime")
     public static void setDateTime(TextView textView, Long time) {
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss", Locale.getDefault());
         long date = System.currentTimeMillis();
         if (time != null) {
             date = time * 1000;
@@ -36,4 +36,5 @@ public class CustomDataBinding {
         final DecimalFormat df = new DecimalFormat("#.00");
         textView.setText(df.format(value));
     }
+
 }

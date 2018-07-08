@@ -33,14 +33,13 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='@{cityWeather.main.temp}'
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@id/lon_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Łódź"/>
+                app:dateTime='@{cityWeather.dt}'/>
 
             <TextView
                 android:id="@+id/lon_text"
@@ -188,8 +187,8 @@
                         android:layout_marginEnd="@dimen/size_6dp"
                         android:layout_marginStart="@dimen/size_6dp"
                         android:textSize="14sp"
-                        app:dateTime='@{cityWeather.sys.sunrise}'
-                        tools:text="7:50"/>
+                        app:doubleText='@{cityWeather.main.pressure}'
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -214,8 +213,8 @@
                         android:layout_marginEnd="@dimen/size_6dp"
                         android:layout_marginStart="@dimen/size_6dp"
                         android:textSize="14sp"
-                        app:dateTime='@{cityWeather.sys.sunset}'
-                        tools:text="17:50"/>
+                        app:text='@{cityWeather.main.humidity+" %"}'
+                        tools:text="00.00"/>
                 </LinearLayout>
             </LinearLayout>
 
