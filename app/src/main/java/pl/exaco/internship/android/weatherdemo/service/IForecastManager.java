@@ -7,5 +7,5 @@ import pl.exaco.internship.android.weatherdemo.model.CityWeather;
 
 public interface IForecastManager {
 
-    void getForecastForCity(City city, RequestCallback<List<CityWeather>> callback);
+    void getForecastForCity(int id, RequestCallback<List<CityWeather>> callback);
 }

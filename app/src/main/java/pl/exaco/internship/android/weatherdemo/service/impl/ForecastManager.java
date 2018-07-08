@@ -27,8 +27,8 @@ public class ForecastManager extends BaseManager implements IForecastManager{
     }
 
     @Override
-    public void getForecastForCity(City city, RequestCallback<List<CityWeather>> callback) {
-        api.getForecastWeather(String.valueOf(city.getId())).enqueue(new Callback<FutureWeather>() {
+    public void getForecastForCity(int id, RequestCallback<List<CityWeather>> callback) {
+        api.getForecastWeather(String.valueOf(id)).enqueue(new Callback<FutureWeather>() {
             @Override
             public void onResponse(Call<FutureWeather> call, Response<FutureWeather> response) {
                 if (null != response && response.body() != null) {

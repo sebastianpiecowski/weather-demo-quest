@@ -5,4 +5,6 @@ public interface IServiceFactory {
 	ICitiesManager getCitiesManager();
 
 	IWeatherManager getWeatherManager();
+
+	IForecastManager getForecastManager();
 }
